@@ -7,7 +7,7 @@ import Footer from "./components/Footer";
 import LoadScreen from "./components/LoadScreen";
 
 export default function Home() {
-  const [showComponents, setShowComponents] = useState(false);
+  const [showComponents, setShowComponents] = useState(true);
   useEffect(() => {
     (() => {
       setInterval(() => {

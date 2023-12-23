@@ -1,11 +1,9 @@
 "use client";
 import Script from "next/script";
 import "./Logo.css";
-import React, { useEffect } from "react";
+import React from "react";
 
 function LogoText(): React.JSX.Element {
-  const spans = document.querySelectorAll(".word span");
-
   return (
     <>
       <Script id="show-banner">

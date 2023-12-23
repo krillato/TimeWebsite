@@ -1,5 +1,6 @@
 import React from "react";
-import CustomCarousel from "../Slider";
+
+import Image from "next/image";
 const images = [
   {
     imgURL:
@@ -23,11 +24,11 @@ const images = [
 function HomeStepFour() {
   return (
     <div>
-      <CustomCarousel>
+      {/*    <CustomCarousel>
         {images.map((image, index) => {
-          return <img key={index} src={image.imgURL} alt={image.imgAlt} />;
+          return <Image key={index} src={image.imgURL} alt={image.imgAlt} />;
         })}
-      </CustomCarousel>
+      </CustomCarousel> */}
     </div>
   );
 }

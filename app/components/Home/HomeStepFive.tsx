@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import Circle from "../Circle/Circle";
 //img
 import vscode from "@/public/img/vscode.webp";
 import ts from "@/public/img/ts.png";

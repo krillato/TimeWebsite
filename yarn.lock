@@ -3130,7 +3130,7 @@ next-video@^0.9.1:
 
 next@^14.0.4:
   version "14.0.4"
-  resolved "https://registry.npmjs.org/next/-/next-14.0.4.tgz"
+  resolved "https://registry.yarnpkg.com/next/-/next-14.0.4.tgz#bf00b6f835b20d10a5057838fa2dfced1d0d84dc"
   integrity sha512-qbwypnM7327SadwFtxXnQdGiKpkuhaRLE2uq62/nRul9cj9KhQ5LhHmlziTNqUidZotw/Q1I9OjirBROdUJNgA==
   dependencies:
     "@next/env" "14.0.4"
@@ -3538,7 +3538,7 @@ rc@^1.2.7:
 
 react-background-video-player@^1.1.8:
   version "1.1.8"
-  resolved "https://registry.npmjs.org/react-background-video-player/-/react-background-video-player-1.1.8.tgz"
+  resolved "https://registry.yarnpkg.com/react-background-video-player/-/react-background-video-player-1.1.8.tgz#3a3d5407b855a1ee3355b0458beefd7ad7eaacdc"
   integrity sha512-stGl6dNhcybOIdbMq5nnKQ15AAvEBqdBMc4r+EfBnUuUH7bBWhs7/JK++NmviFHjgVgQJoGraqFCKnreGWpUWg==
   dependencies:
     background-cover "0.1.1"

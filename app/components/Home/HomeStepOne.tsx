@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+// @ts-ignore
 import VideoPlayer from "react-background-video-player";
 import "./HomeStepOne.css";
 import styled from "styled-components";
@@ -9,8 +10,6 @@ import nunew from "@/public/img/nunew.png";
 import Image from "next/image";
 import Link from "next/link";
 import CMU from "@/videos/cmu.mp4";
-import Video from "next-video";
-// MUI
 
 const HomeStepOne = (): React.JSX.Element => {
   const [drawerOpen, setDrawerOpen] = useState(false);
@@ -27,25 +26,30 @@ const HomeStepOne = (): React.JSX.Element => {
   };
 
   return (
-    <main className="overflow-hidden">
-      {/*  <VideoPlayer
+    <main className="overflow-hidden w-full h-full">
+      {/*   <VideoPlayer
         className="video opacity-50 w-full h-full  "
         src={
           "https://player.vimeo.com/external/435674703.sd.mp4?s=01ad1ba21dc72c1d34728e1b77983805b34daad7&profile_id=165&oauth2_token_id=57447761"
         }
         autoPlay={true}
-        //muted={true}
+        muted={true}
       /> */}
-      {/*  <Video
-        src={CMU}
-        autoPlay
-        muted
-        loop
-        playsInline
-        controls={false}
-        className="absolute opacity-50 w-full h-full  "
-      /> */}
-      <div id="StepOne" className=" w-full h-screen  bg-[#8c9ba2] p-5">
+      <div>
+        <video
+          src={
+            "https://player.vimeo.com/external/435674703.sd.mp4?s=01ad1ba21dc72c1d34728e1b77983805b34daad7&profile_id=165&oauth2_token_id=57447761"
+          }
+          autoPlay
+          muted
+          loop
+          playsInline
+          controls={false}
+          className="absolute opacity-50  border object-cover w-full h-full  "
+        />
+      </div>
+
+      <div id="StepOne" className=" w-full h-full  bg-[#8c9ba2] p-5">
         <nav className="flex-cols justify-between ">
           <div className="flex justify-between">
             <div>
@@ -101,6 +105,7 @@ const HomeStepOne = (): React.JSX.Element => {
             <div className="w-full  border-t-[1px] opacity-50" />
           </div>
         </nav>
+
         <div className="flex h-full justify-center items-center">
           <div className="absolute w-full p-5 border  flex justify-between  items-center">
             <div className="w-[10px] ease-in-out duration-700  hover:w-[200px]  bg-[#91868679] rounded-r-[99px] h-[80px] flex  justify-between p-2">
@@ -120,13 +125,7 @@ const HomeStepOne = (): React.JSX.Element => {
             priority
           />
         </div>
-        {/* <Marquee
-          pauseOnHover={true}
-          className="text-[60px] font-medium text-end flex justify-items-end items-end"
-        >
-          SoftwareDevelop and FullStack (React + dotnet)
-        </Marquee> */}
-      </div>{" "}
+      </div>
       <Footer />
     </main>
   );
@@ -147,18 +146,18 @@ const icon_menu: any = (
   >
     <g
       fill="none"
-      fill-rule="nonzero"
+      fillRule="nonzero"
       stroke="none"
-      stroke-width="1"
-      stroke-linecap="butt"
-      stroke-linejoin="miter"
-      stroke-miterlimit="10"
-      stroke-dasharray=""
-      stroke-dashoffset="0"
-      font-family="none"
-      font-weight="none"
-      font-size="none"
-      text-anchor="none"
+      strokeWidth="1"
+      strokeLinecap="butt"
+      strokeLinejoin="miter"
+      strokeMiterlimit="10"
+      strokeDasharray=""
+      strokeDashoffset="0"
+      fontFamily="none"
+      fontWeight="none"
+      fontSize="none"
+      textAnchor="none"
     >
       <g transform="scale(5.33333,5.33333)">
         <path

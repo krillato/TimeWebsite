@@ -32,7 +32,7 @@ function LogoText(): React.JSX.Element {
       </div>
       <footer>
         <p className="flex justify-center">
-          Protfolio <i className="fa fa-heart"></i>By {"   "}
+          Portfolio <i className="fa fa-heart"></i>By {"   "}
           <p className="text-[#3C97BF] ml-2"> Time</p>
         </p>
       </footer>

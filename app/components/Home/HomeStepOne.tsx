@@ -49,7 +49,7 @@ const HomeStepOne = (): React.JSX.Element => {
         />
       </div>
 
-      <div id="StepOne" className=" w-full h-full  bg-[#8c9ba2] p-5">
+      <div id="StepOne" className=" w-full h-full  bg-[#636363] p-5">
         <nav className="flex-cols justify-between ">
           <div className="flex justify-between">
             <div>
@@ -74,8 +74,32 @@ const HomeStepOne = (): React.JSX.Element => {
                 role="presentation"
                 onClick={toggleDrawer(false)}
                 onKeyDown={toggleDrawer(false)}
+                className="p-5"
               >
-                <p>This is the content of the Drawer</p>
+                <p>Tammarat Chansamorn</p>
+                <div className="flex gap-4 justify-center w-[50%]">
+                  <ul className="">
+                    <li className="cursor-pointer hover:bg-[#b271de] hover:text-white transition duration-700 ease-in-out hover:rounded-xl  hover:p-2">
+                      <a href="#">About</a>
+                    </li>
+                    <li className="cursor-pointer hover:bg-[#b271de] hover:text-white transition duration-700 ease-in-out hover:rounded-xl  hover:p-2">
+                      <Link href="/file/Tammarat_Chansamorn.pdf" locale={false}>
+                        Resume
+                      </Link>
+                    </li>
+                    <li className="cursor-pointer hover:bg-[#b271de] hover:text-white transition duration-700 ease-in-out hover:rounded-xl  hover:p-2">
+                      <a href="#">Contact</a>
+                    </li>
+                    <li className="cursor-pointer hover:bg-[#b271de] hover:text-white transition duration-700 ease-in-out hover:rounded-xl  hover:p-2">
+                      <Link
+                        href={"https://github.com/krillato"}
+                        target="_blank"
+                      >
+                        Work
+                      </Link>
+                    </li>
+                  </ul>
+                </div>
               </div>
             </Drawer>
             <div className="hidden lg:opacity-1 lg:flex gap-5 z-[9999]">
@@ -101,16 +125,23 @@ const HomeStepOne = (): React.JSX.Element => {
           </div>
 
           <div className="flex justify-center items-center p-5">
-            <span className="w-[250px]">WEB & Time Solution</span>
-            <div className="w-full  border-t-[1px] opacity-50" />
+            <div className="w-auto">
+              <span className="w-[250px]">WEB & Tammarat</span>
+              <br />
+              <span className="text-[12px]">
+                The person in the picture is not me.
+              </span>
+            </div>
+
+            <div className="w-full mr-2 border-t-[1px] opacity-50" />
           </div>
         </nav>
 
         <div className="flex h-full justify-center items-center">
-          <div className="absolute w-full p-5 border  flex justify-between  items-center">
+          <div className="absolute w-full p-5   flex justify-between  items-center">
             <div className="w-[10px] ease-in-out duration-700  hover:w-[200px]  bg-[#91868679] rounded-r-[99px] h-[80px] flex  justify-between p-2">
               <span className="text-[14px]  ml-3">
-                Located <br /> in the <br /> Thailand
+                Located <br /> in the <br /> Bangkok
               </span>
               <div className="bg-[#985858e7] w-[60px] h-[60px] rounded-[99px] text-center items-center justify-center mr-2"></div>
             </div>
@@ -119,7 +150,7 @@ const HomeStepOne = (): React.JSX.Element => {
             </span>
           </div>
           <Image
-            className=" h-full w-auto z-[999] flex justify-end    rounded-lg"
+            className=" h-full w-auto z-[999] flex justify-end rounded-lg hover:md:w-[70%] hover:md:h-auto transition   duration-1000 ease-in-out "
             src={nunew}
             alt="Next.js Logo"
             priority

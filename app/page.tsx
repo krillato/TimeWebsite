@@ -5,6 +5,7 @@ import HomeStepOne from "./components/Home/HomeStepOne";
 //* TEXT
 import Footer from "./components/Footer";
 import LoadScreen from "./components/LoadScreen";
+import Contact from "./components/Contact/View";
 
 export default function Home() {
   const [showComponents, setShowComponents] = useState(true);
@@ -23,7 +24,7 @@ export default function Home() {
         ) : (
           <>
             <HomeStepOne />
-
+            <Contact />
             <Footer />
           </>
         )}

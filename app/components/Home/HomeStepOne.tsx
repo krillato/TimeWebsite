@@ -1,29 +1,16 @@
 import React, { useState } from "react";
 // @ts-ignore
-import VideoPlayer from "react-background-video-player";
 import "./HomeStepOne.css";
 import styled from "styled-components";
 //* TEXT
 import LogoText from "../Text/Home/Logo";
-import Drawer from "@mui/material/Drawer";
 import nunew from "@/public/img/nunew.png";
 import Image from "next/image";
 import Link from "next/link";
-import CMU from "@/videos/cmu.mp4";
 
 const HomeStepOne = (): React.JSX.Element => {
   const [drawerOpen, setDrawerOpen] = useState(false);
   const handleClick = () => setDrawerOpen(!drawerOpen);
-  const toggleDrawer = (open: any) => (event: any) => {
-    if (
-      event.type === "keydown" &&
-      (event.key === "Tab" || event.key === "Shift")
-    ) {
-      return;
-    }
-
-    setDrawerOpen(open);
-  };
 
   return (
     <main className="overflow-hidden w-full h-full">
@@ -65,43 +52,6 @@ const HomeStepOne = (): React.JSX.Element => {
                 {icon_menu}
               </div>
             </div>
-            <Drawer
-              anchor="right"
-              open={drawerOpen}
-              onClose={toggleDrawer(false)}
-            >
-              <div
-                role="presentation"
-                onClick={toggleDrawer(false)}
-                onKeyDown={toggleDrawer(false)}
-                className="p-5"
-              >
-                <p>Tammarat Chansamorn</p>
-                <div className="flex gap-4 justify-center w-[50%]">
-                  <ul className="">
-                    <li className="cursor-pointer hover:bg-[#b271de] hover:text-white transition duration-700 ease-in-out hover:rounded-xl  hover:p-2">
-                      <a href="#">About</a>
-                    </li>
-                    <li className="cursor-pointer hover:bg-[#b271de] hover:text-white transition duration-700 ease-in-out hover:rounded-xl  hover:p-2">
-                      <Link href="/file/Tammarat_Chansamorn.pdf" locale={false}>
-                        Resume
-                      </Link>
-                    </li>
-                    <li className="cursor-pointer hover:bg-[#b271de] hover:text-white transition duration-700 ease-in-out hover:rounded-xl  hover:p-2">
-                      <a href="#">Contact</a>
-                    </li>
-                    <li className="cursor-pointer hover:bg-[#b271de] hover:text-white transition duration-700 ease-in-out hover:rounded-xl  hover:p-2">
-                      <Link
-                        href={"https://github.com/krillato"}
-                        target="_blank"
-                      >
-                        Work
-                      </Link>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </Drawer>
             <div className="hidden lg:opacity-1 lg:flex gap-5 z-[9999]">
               <ul className="nav">
                 <li className="cursor-pointer">

@@ -24,11 +24,10 @@ function LogoText(): React.JSX.Element {
           `}
       </Script>
       <div className="word">
-        <span>N</span>
-        <span>U</span>
-        <span>N</span>
+        <span>T</span>
+        <span>I</span>
+        <span>M</span>
         <span>E</span>
-        <span>W</span>
       </div>
       <footer>
         <p className="flex justify-center">

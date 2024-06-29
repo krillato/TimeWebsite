@@ -4,7 +4,8 @@ import "./HomeStepOne.css";
 import styled from "styled-components";
 //* TEXT
 import LogoText from "../Text/Home/Logo";
-import nunew from "@/public/img/nunew.png";
+
+import profileImg from "@/public/img/TimeProfile.png";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -25,14 +26,14 @@ const HomeStepOne = (): React.JSX.Element => {
       <div>
         <video
           src={
-            "https://player.vimeo.com/external/435674703.sd.mp4?s=01ad1ba21dc72c1d34728e1b77983805b34daad7&profile_id=165&oauth2_token_id=57447761"
+            "https://media.istockphoto.com/id/1310824444/th/%E0%B8%A7%E0%B8%B4%E0%B8%94%E0%B8%B5%E0%B9%82%E0%B8%AD/%E0%B8%88%E0%B8%B1%E0%B8%81%E0%B8%A3%E0%B8%A7%E0%B8%B2%E0%B8%A5%E0%B8%9A%E0%B8%B2%E0%B8%99%E0%B8%AA%E0%B8%B0%E0%B8%9E%E0%B8%A3%E0%B8%B1%E0%B9%88%E0%B8%87%E0%B9%83%E0%B8%99%E0%B9%80%E0%B8%A7%E0%B8%A5%E0%B8%B2%E0%B8%9E%E0%B8%A5%E0%B8%9A%E0%B8%84%E0%B9%88%E0%B9%8D%E0%B8%B2%E0%B8%9C%E0%B8%B5%E0%B9%80%E0%B8%AA%E0%B8%B7%E0%B9%89%E0%B8%AD%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B8%AA%E0%B8%A7%E0%B8%A2%E0%B8%87%E0%B8%B2%E0%B8%A1%E0%B8%9A%E0%B8%B4%E0%B8%99%E0%B9%84%E0%B8%9B%E0%B8%A3%E0%B8%AD%E0%B8%9A-%E0%B9%86.mp4?s=mp4-640x640-is&k=20&c=_FNkHfF58VhErv9WtYeQvZy8Iggb3_wQs4CF_bkbytc="
           }
           autoPlay
           muted
           loop
           playsInline
           controls={false}
-          className="absolute opacity-50  border object-cover w-full h-full  "
+          className="absolute opacity-50   object-cover w-full h-full  "
         />
       </div>
 
@@ -100,8 +101,8 @@ const HomeStepOne = (): React.JSX.Element => {
             </span>
           </div>
           <Image
-            className=" h-full w-auto z-[999] flex justify-end rounded-lg hover:md:w-[70%] hover:md:h-auto transition   duration-1000 ease-in-out "
-            src={nunew}
+            className=" h-full w-auto z-[999] flex justify-end rounded-lg hover:md:w-[70%] hover:md:h-auto transition  object-cover duration-1000 ease-in-out "
+            src={profileImg}
             alt="Next.js Logo"
             priority
           />

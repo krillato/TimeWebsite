@@ -8,6 +8,7 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "TimePort",
   description: "Time Website",
+  keywords: "port, time, tammarat",
 };
 
 export default function RootLayout({

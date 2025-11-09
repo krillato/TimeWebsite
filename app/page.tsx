@@ -6,6 +6,7 @@ import HomeStepOne from "./components/Home/HomeStepOne";
 import Footer from "./components/Footer";
 import LoadScreen from "./components/LoadScreen";
 import Contact from "./components/Contact/View";
+import PagePortNewVer from "./port/page";
 
 export default function Home() {
   const [showComponents, setShowComponents] = useState(true);
@@ -23,9 +24,10 @@ export default function Home() {
           <LoadScreen />
         ) : (
           <>
-            <HomeStepOne />
+            {/*  <HomeStepOne />
             <Contact />
-            <Footer />
+            <Footer /> */}
+            <PagePortNewVer />
           </>
         )}
       </main>

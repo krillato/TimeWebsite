@@ -230,7 +230,7 @@ const SwiperCards = React.memo(({ cards, sectionId }) => {
 SwiperCards.displayName = "SwiperCards";
 
 // useThreeJS Hook
-const useThreeJS = (canvasRef, profileImages) => {
+const useThreeJS = (canvasRef, profileImages, astronautFaceImage) => {
   const characterRef = useRef(null);
   const rocketRef = useRef(null);
   const astronautRef = useRef(null);
@@ -290,6 +290,8 @@ const useThreeJS = (canvasRef, profileImages) => {
 
     // Astronaut
     const astronautGroup = new THREE.Group();
+
+    // Helmet
     const helmet = new THREE.Mesh(
       new THREE.SphereGeometry(0.5, 32, 32),
       new THREE.MeshPhongMaterial({
@@ -302,17 +304,39 @@ const useThreeJS = (canvasRef, profileImages) => {
     helmet.position.y = 1.5;
     astronautGroup.add(helmet);
 
+    // Visor with Face Texture
+    const faceTexture = textureLoader.load(
+      astronautFaceImage || "/img/port3d/S__23248906_0.jpg"
+    );
+
     const visor = new THREE.Mesh(
       new THREE.SphereGeometry(0.45, 32, 32, 0, Math.PI),
-      new THREE.MeshBasicMaterial({
-        color: 0x4dd0e1,
+      new THREE.MeshPhongMaterial({
+        map: faceTexture, // ใส่รูปหน้าที่นี่
         transparent: true,
-        opacity: 0.6,
+        opacity: 0.95,
+        shininess: 100,
+        emissive: 0x4dd0e1,
+        emissiveIntensity: 0.1,
       })
     );
     visor.position.set(0, 1.5, 0.25);
     visor.rotation.x = -Math.PI / 8;
     astronautGroup.add(visor);
+
+    // Glass overlay for visor effect
+    const glass = new THREE.Mesh(
+      new THREE.SphereGeometry(0.46, 32, 32, 0, Math.PI),
+      new THREE.MeshPhongMaterial({
+        color: 0x4dd0e1,
+        transparent: true,
+        opacity: 0.3,
+        shininess: 200,
+      })
+    );
+    glass.position.set(0, 1.5, 0.26);
+    glass.rotation.x = -Math.PI / 8;
+    astronautGroup.add(glass);
 
     const body = new THREE.Mesh(
       new THREE.CylinderGeometry(0.4, 0.5, 1.2, 16),
@@ -355,7 +379,7 @@ const useThreeJS = (canvasRef, profileImages) => {
     scene.add(astronautGroup);
     astronautRef.current = astronautGroup;
 
-    // Rocket
+    // Rocket (เหมือนเดิม)
     const rocketGroup = new THREE.Group();
     const rocketBody = new THREE.Mesh(
       new THREE.CylinderGeometry(0.25, 0.35, 1.8, 16),
@@ -377,9 +401,7 @@ const useThreeJS = (canvasRef, profileImages) => {
     nose.position.y = 1.3;
     rocketGroup.add(nose);
 
-    const photoTexture = textureLoader.load(
-      "https://scontent.fbkk5-4.fna.fbcdn.net/v/t1.6435-9/127465242_3664071103677028_8195885441672323243_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=cc71e4&_nc_ohc=sJHNH0hdStwQ7kNvwE0H-7b&_nc_oc=AdnSEr1C6j3wv-zL41On2cU91FQ5SyanuRfH2_LR-EvvLEqRZZIdv9348jU8dMH9mYlJf5J8RkDdOd-J5Eu2NFu4&_nc_zt=23&_nc_ht=scontent.fbkk5-4.fna&_nc_gid=M1LvsV_nqL8quNIfwSl86A&oh=00_AfhZBR34qCSa6dpZqqhRDE8B6zzYHVybuSpFFLbHH88ZjQ&oe=6937BC90"
-    );
+    const photoTexture = textureLoader.load("");
 
     for (let i = 0; i < 3; i++) {
       const win = new THREE.Mesh(
@@ -491,7 +513,7 @@ const useThreeJS = (canvasRef, profileImages) => {
       window.removeEventListener("resize", handleResize);
       renderer.dispose();
     };
-  }, [canvasRef, profileImages]);
+  }, [canvasRef, profileImages, astronautFaceImage]);
 
   return { characterRef, rocketRef, astronautRef };
 };
@@ -1158,14 +1180,13 @@ const Portfolio3D = () => {
 
   const profileImages = useMemo(
     () => [
-      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop",
-      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=400&fit=crop",
-      "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=400&fit=crop",
-      "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400&h=400&fit=crop",
-      "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400&h=400&fit=crop",
-      "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=400&fit=crop",
-      "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=400&h=400&fit=crop",
-      "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=400&h=400&fit=crop",
+      "/img/port3d/S__23257092_0.jpg",
+      "/img/port3d/S__23248911_0.jpg",
+      "/img/port3d/S__23248905_0.jpg",
+      "/img/port3d/S__23248909_0.jpg",
+      "/img/port3d/S__23257093_0.jpg",
+      "/img/port3d/S__23248903_0.jpg",
+      "/img/port3d/S__23257092_0.jpg",
     ],
     []
   );
@@ -1179,8 +1200,14 @@ const Portfolio3D = () => {
     }
   };
 
-  useThreeJS(canvasRef, profileImages);
-  useParticles(particleCanvasRef, activeSection);
+  useThreeJS(
+    canvasRef,
+    profileImages,
+    "/img/port3d/S__23248906_0.jpg" // path รูปหน้านักบินอวกาศ
+  );
+  useParticles(particleCanvasRef, activeSection, {
+    astronautFace: "/img/port3d/S__23248906_0.jpg",
+  });
 
   useEffect(() => {
     let rafId = null;
@@ -1467,7 +1494,7 @@ const Portfolio3D = () => {
                   : "bg-gradient-to-r from-orange-500 via-rose-500 to-pink-500"
               } bg-clip-text text-transparent animate-gradient`}
             >
-              {currentContent.hero.title} ✨
+              {currentContent.hero.title}✨
             </h1>
             <p
               className={`text-xl sm:text-2xl lg:text-3xl ${

@@ -175,7 +175,11 @@ const SwiperCards = React.memo(({ cards, sectionId }) => {
                     hoveredIndex === idx ? "rotate-3" : ""
                   }`}
                 >
-                  {card.img}
+                  <img
+                    src={card.img}
+                    alt={card.title}
+                    className="w-full h-full object-cover rounded-xl mb-4"
+                  />
                 </div>
                 <h3 className="text-xl sm:text-2xl font-bold mb-2">
                   {card.title}
@@ -184,7 +188,10 @@ const SwiperCards = React.memo(({ cards, sectionId }) => {
                   {card.tech}
                 </p>
                 <p className="text-gray-400 text-sm">{card.desc}</p>
-                <button className="mt-4 text-purple-400 hover:text-purple-300 transition-colors text-sm">
+                <button
+                  onClick={() => window.open(card.link, "_blank")}
+                  className="mt-4 text-purple-400 hover:text-purple-300 transition-colors text-sm"
+                >
                   {card.viewText || "View Project"} →
                 </button>
               </>
@@ -840,30 +847,34 @@ const Portfolio3D = () => {
             {
               title: "E-commerce",
               tech: "Next.js, Stripe",
-              desc: "Online store",
-              img: "🛍️",
+              desc: "Membership site",
+              img: "/img/project/kingpower-powerpass.png",
               viewText: "View Project",
+              link: "https://powerpass.kingpower.com/th",
             },
             {
-              title: "AI Dashboard",
-              tech: "React, Python",
-              desc: "Data visualization",
-              img: "📊",
+              title: "axons maintenance",
+              tech: "React, .NET, kafka",
+              desc: "backoffice system",
+              img: "/img/project/axons-axmt.png",
               viewText: "View Project",
+              link: "https://axonstech.com/product/maintenance",
             },
             {
-              title: "Mobile App",
-              tech: "React Native",
-              desc: "iOS & Android",
-              img: "📱",
+              title: "CIP Product",
+              tech: "react, astro",
+              desc: "ระบบจองตรงและจัดการที่พัก",
+              img: "/img/project/cip-product.png",
               viewText: "View Project",
+              link: "https://product.checkinbooks.com/",
             },
             {
-              title: "Portfolio",
-              tech: "Three.js, Next.js",
-              desc: "3D experience",
-              img: "🎨",
+              title: "Home Flow",
+              tech: "Next.js",
+              desc: "คำนวณสินเชื่อบ้านพร้อมกำหนดอัตราดอกเบี้ยรายปีได้",
+              img: "/img/project/home-flow.png",
               viewText: "View Project",
+              link: "https://homeflow-sigma.vercel.app/",
             },
           ],
           hint: "Drag to see all",
@@ -1108,32 +1119,37 @@ const Portfolio3D = () => {
             {
               title: "E-commerce",
               tech: "Next.js, Stripe",
-              desc: "ร้านค้าออนไลน์",
-              img: "🛍️",
+              desc: "Membership site",
+              img: "/img/project/kingpower-powerpass.png",
               viewText: "ดูผลงาน",
+              link: "https://powerpass.kingpower.com/th",
             },
             {
-              title: "แดชบอร์ด AI",
-              tech: "React, Python",
-              desc: "แสดงผลข้อมูล",
-              img: "📊",
+              title: "axons maintenance",
+              tech: "React, .NET, kafka",
+              desc: "backoffice system",
+              img: "/img/project/axons-axmt.png",
               viewText: "ดูผลงาน",
+              link: "https://axonstech.com/product/maintenance",
             },
             {
-              title: "แอปมือถือ",
-              tech: "React Native",
-              desc: "iOS และ Android",
-              img: "📱",
+              title: "CIP Product",
+              tech: "react, astro",
+              desc: "ระบบจองตรงและจัดการที่พัก",
+              img: "/img/project/cip-product.png",
               viewText: "ดูผลงาน",
+              link: "https://product.checkinbooks.com/",
             },
             {
-              title: "พอร์ตโฟลิโอ",
-              tech: "Three.js, Next.js",
-              desc: "ประสบการณ์ 3D",
-              img: "🎨",
+              title: "Home Flow",
+              tech: "Next.js",
+              desc: "คำนวณสินเชื่อบ้านพร้อมกำหนดอัตราดอกเบี้ยรายปีได้",
+              img: "/img/project/home-flow.png",
               viewText: "ดูผลงาน",
+              link: "https://homeflow-sigma.vercel.app/",
             },
           ],
+
           hint: "ลากเพื่อดูทั้งหมด",
         },
         contact: {

@@ -6,9 +6,10 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "TimePort",
-  description: "Time Website",
-  keywords: "port, time, tammarat",
+  title: "timelabsz",
+  description: "Time Website : timelabsz portfolio",
+  keywords:
+    "port, time, tammarat, portfolio, web developer, frontend, backend, timelabsz, Time Website",
 };
 
 export default function RootLayout({
